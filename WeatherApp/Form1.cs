@@ -18,7 +18,7 @@ namespace WeatherApp
         {
             InitializeComponent();
         }
-        string APIKey = "1a4a2416526ea1be74f7d2ca6b22eb2e";
+        string APIKey = "********";
        
 
         private void showButton_Click(object sender, EventArgs e)
