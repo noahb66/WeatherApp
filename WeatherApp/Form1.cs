@@ -29,7 +29,7 @@ namespace WeatherApp
 
         void getWeather()
         {
-            // error checking the city 
+            // TODO error checking the city 
             string city = cityTextBox.Text;
             using (WebClient web = new WebClient())
             {
