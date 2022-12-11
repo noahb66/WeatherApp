@@ -51,8 +51,8 @@ namespace WeatherApp
                         detailsLabel.Text = Info.weather[0].description;
                         sunsetLabelResults.Text = convertDateTime(Info.sys.sunset).ToShortTimeString();
                         sunriseLabelResults.Text = convertDateTime(Info.sys.sunrise).ToShortTimeString();
-                        currentTempLabel.Text = Info.main.temp.ToString();
-                        feelsLikeLabel.Text = Info.main.feels_like.ToString();
+                        currentTempLabel.Text = kelvinToFahrenheit(Info.main.temp).ToString();
+                        feelsLikeLabel.Text = kelvinToFahrenheit(Info.main.feels_like).ToString();
                         windSpeedLabel.Text = Info.wind.speed.ToString();
                         pressureLabel.Text = Info.main.pressure.ToString();
                     }
@@ -65,7 +65,13 @@ namespace WeatherApp
 
             
         }
+        // TODO Convert temperatures to Farenheit
+        double kelvinToFahrenheit(double kelvin)
+        {
+            double fahrenheit = 1.8 * (kelvin - 273) + 32;
+            return fahrenheit;
 
+        }
         // converts the sunset and sunrise times to be in appropriate format
         DateTime convertDateTime(long time)
         {

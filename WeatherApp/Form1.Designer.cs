@@ -60,7 +60,7 @@
             // 
             this.showButton.BackColor = System.Drawing.Color.Transparent;
             this.showButton.ForeColor = System.Drawing.Color.White;
-            this.showButton.Location = new System.Drawing.Point(238, 43);
+            this.showButton.Location = new System.Drawing.Point(254, 43);
             this.showButton.Name = "showButton";
             this.showButton.Size = new System.Drawing.Size(75, 23);
             this.showButton.TabIndex = 0;
@@ -74,7 +74,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(87, 41);
+            this.label1.Location = new System.Drawing.Point(103, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 23);
             this.label1.TabIndex = 1;
@@ -86,7 +86,7 @@
             this.labelCondition.BackColor = System.Drawing.Color.Transparent;
             this.labelCondition.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCondition.ForeColor = System.Drawing.Color.White;
-            this.labelCondition.Location = new System.Drawing.Point(103, 109);
+            this.labelCondition.Location = new System.Drawing.Point(89, 85);
             this.labelCondition.Name = "labelCondition";
             this.labelCondition.Size = new System.Drawing.Size(39, 23);
             this.labelCondition.TabIndex = 1;
@@ -98,7 +98,7 @@
             this.detailsLabel.BackColor = System.Drawing.Color.Transparent;
             this.detailsLabel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.detailsLabel.ForeColor = System.Drawing.Color.White;
-            this.detailsLabel.Location = new System.Drawing.Point(103, 132);
+            this.detailsLabel.Location = new System.Drawing.Point(89, 108);
             this.detailsLabel.Name = "detailsLabel";
             this.detailsLabel.Size = new System.Drawing.Size(39, 23);
             this.detailsLabel.TabIndex = 1;
@@ -204,7 +204,7 @@
             // picIcon
             // 
             this.picIcon.BackColor = System.Drawing.Color.Transparent;
-            this.picIcon.Location = new System.Drawing.Point(53, 30);
+            this.picIcon.Location = new System.Drawing.Point(70, 16);
             this.picIcon.Name = "picIcon";
             this.picIcon.Size = new System.Drawing.Size(58, 65);
             this.picIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -213,7 +213,7 @@
             // 
             // cityTextBox
             // 
-            this.cityTextBox.Location = new System.Drawing.Point(123, 44);
+            this.cityTextBox.Location = new System.Drawing.Point(139, 44);
             this.cityTextBox.Name = "cityTextBox";
             this.cityTextBox.Size = new System.Drawing.Size(100, 20);
             this.cityTextBox.TabIndex = 4;
@@ -281,9 +281,9 @@
             this.TemperatureGroupBox.Controls.Add(this.label2);
             this.TemperatureGroupBox.Controls.Add(this.pressureLabel);
             this.TemperatureGroupBox.Controls.Add(this.label5);
-            this.TemperatureGroupBox.Location = new System.Drawing.Point(39, 70);
+            this.TemperatureGroupBox.Location = new System.Drawing.Point(12, 70);
             this.TemperatureGroupBox.Name = "TemperatureGroupBox";
-            this.TemperatureGroupBox.Size = new System.Drawing.Size(200, 170);
+            this.TemperatureGroupBox.Size = new System.Drawing.Size(227, 170);
             this.TemperatureGroupBox.TabIndex = 9;
             this.TemperatureGroupBox.TabStop = false;
             this.TemperatureGroupBox.Text = "Temperature";
@@ -294,7 +294,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(12, 108);
+            this.label7.Location = new System.Drawing.Point(-2, 84);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 23);
             this.label7.TabIndex = 10;
@@ -306,7 +306,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(35, 132);
+            this.label8.Location = new System.Drawing.Point(21, 108);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 23);
             this.label8.TabIndex = 11;
@@ -322,7 +322,7 @@
             this.groupBox1.Controls.Add(this.detailsLabel);
             this.groupBox1.Location = new System.Drawing.Point(245, 70);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(155, 170);
+            this.groupBox1.Size = new System.Drawing.Size(219, 170);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Condition";
@@ -333,7 +333,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(407, 301);
+            this.ClientSize = new System.Drawing.Size(476, 301);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.TemperatureGroupBox);
             this.Controls.Add(this.cityTextBox);
