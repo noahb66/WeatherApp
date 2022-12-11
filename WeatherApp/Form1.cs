@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.Net;
 using System.Net.Http;
+using System.Text.RegularExpressions;
 
 namespace WeatherApp
 {
@@ -32,26 +33,36 @@ namespace WeatherApp
         {
             // TODO error checking the city 
             string city = cityTextBox.Text;
-            string url = string.Format("https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}", city, APIKey);
-            HttpClient client = new HttpClient();
-            using (HttpResponseMessage response = client.GetAsync(url).Result)
+            int checker = 0;
+            if (!string.IsNullOrEmpty(city) && Regex.IsMatch(city, @"^[a-zA-Z]+$"))
             {
-                using (HttpContent content = response.Content)
+                HttpClient client = new HttpClient();
+                string url = string.Format("https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}", city, APIKey);
+                using (HttpResponseMessage response = client.GetAsync(url).Result)
                 {
-                    var json = content.ReadAsStringAsync().Result;
-                    //using the Newtonsoft Json convert class to process the json data
-                    WeatherInfo.root Info = JsonConvert.DeserializeObject<WeatherInfo.root>(json);
+                    using (HttpContent content = response.Content)
+                    {
+                        var json = content.ReadAsStringAsync().Result;
+                        //using the Newtonsoft Json convert class to process the json data
+                        WeatherInfo.root Info = JsonConvert.DeserializeObject<WeatherInfo.root>(json);
 
-                    picIcon.ImageLocation = "https://api.openweathermap.org/img/w/" + Info.weather[0].icon + ".png";
-                    labelCondition.Text = Info.weather[0].main;
-                    detailsLabel.Text = Info.weather[0].description;
-                    sunsetLabelResults.Text = convertDateTime(Info.sys.sunset).ToShortTimeString();
-                    sunriseLabelResults.Text = convertDateTime(Info.sys.sunrise).ToShortTimeString();
+                        picIcon.ImageLocation = "https://api.openweathermap.org/img/w/" + Info.weather[0].icon + ".png";
+                        labelCondition.Text = Info.weather[0].main;
+                        detailsLabel.Text = Info.weather[0].description;
+                        sunsetLabelResults.Text = convertDateTime(Info.sys.sunset).ToShortTimeString();
+                        sunriseLabelResults.Text = convertDateTime(Info.sys.sunrise).ToShortTimeString();
 
-                    windSpeedLabel.Text = Info.wind.speed.ToString();
-                    pressureLabel.Text = Info.main.pressure.ToString();
+                        windSpeedLabel.Text = Info.wind.speed.ToString();
+                        pressureLabel.Text = Info.main.pressure.ToString();
+                    }
                 }
             }
+            else if (int.TryParse(cityTextBox.Text, out checker) || string.IsNullOrEmpty(city))
+            {
+                MessageBox.Show("Please enter a valid city name");
+            }
+
+            
         }
 
         // converts the sunset and sunrise times to be in appropriate format
