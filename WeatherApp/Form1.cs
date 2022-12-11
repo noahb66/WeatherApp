@@ -51,7 +51,8 @@ namespace WeatherApp
                         detailsLabel.Text = Info.weather[0].description;
                         sunsetLabelResults.Text = convertDateTime(Info.sys.sunset).ToShortTimeString();
                         sunriseLabelResults.Text = convertDateTime(Info.sys.sunrise).ToShortTimeString();
-
+                        currentTempLabel.Text = Info.main.temp.ToString();
+                        feelsLikeLabel.Text = Info.main.feels_like.ToString();
                         windSpeedLabel.Text = Info.wind.speed.ToString();
                         pressureLabel.Text = Info.main.pressure.ToString();
                     }
@@ -71,6 +72,11 @@ namespace WeatherApp
             DateTime day = new DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc).ToLocalTime();
             day = day.AddSeconds(time).ToLocalTime();
             return day;
+
+        }
+
+        private void detailsLabel_Click(object sender, EventArgs e)
+        {
 
         }
     }
